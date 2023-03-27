@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import ProgressBar from './ProgressBar/ProgressBar';
+import { Routes, Route } from "react-router-dom"
+import Billing from './Pages/Billing/Billing';
+import Payment from './Pages/Payment/Payment';
+import CompleteOrder from './Pages/CompleteOrder/CompleteOrder';
+import Main from './Pages/Main/Main';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path=""  element={<Main></Main>}></Route>
+        <Route path="shipping"  element={<Billing></Billing>}></Route>
+        <Route path="review & payment"  element={<Payment></Payment>}></Route>
+        <Route path="complete"  element={<CompleteOrder></CompleteOrder>}></Route>
+      </Routes>
     </div>
   );
 }
